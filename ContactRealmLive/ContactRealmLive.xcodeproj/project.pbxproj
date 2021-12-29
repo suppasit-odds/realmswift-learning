@@ -17,6 +17,8 @@
 		192D78E2277AC9D800E81040 /* ContactRealmLiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D78E1277AC9D800E81040 /* ContactRealmLiveTests.swift */; };
 		192D78EC277AC9D800E81040 /* ContactRealmLiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D78EB277AC9D800E81040 /* ContactRealmLiveUITests.swift */; };
 		192D78EE277AC9D800E81040 /* ContactRealmLiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D78ED277AC9D800E81040 /* ContactRealmLiveUITestsLaunchTests.swift */; };
+		192D78FB277B28F200E81040 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D78FA277B28F200E81040 /* SaveViewController.swift */; };
+		192D78FD277B44D800E81040 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D78FC277B44D800E81040 /* ContactItem.swift */; };
 		1C5C593031A73CC2E934C437 /* Pods_ContactRealmLive_ContactRealmLiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D747B936730329CE4DD28772 /* Pods_ContactRealmLive_ContactRealmLiveUITests.framework */; };
 		E62BCC6C07A134DF14B90D44 /* Pods_ContactRealmLiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFDD906C71EB12FC163D0DA3 /* Pods_ContactRealmLiveTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,8 @@
 		192D78E7277AC9D800E81040 /* ContactRealmLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactRealmLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		192D78EB277AC9D800E81040 /* ContactRealmLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRealmLiveUITests.swift; sourceTree = "<group>"; };
 		192D78ED277AC9D800E81040 /* ContactRealmLiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRealmLiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		192D78FA277B28F200E81040 /* SaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
+		192D78FC277B44D800E81040 /* ContactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		3382D58306DC06959461D3F4 /* Pods-ContactRealmLive-ContactRealmLiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactRealmLive-ContactRealmLiveUITests.release.xcconfig"; path = "Target Support Files/Pods-ContactRealmLive-ContactRealmLiveUITests/Pods-ContactRealmLive-ContactRealmLiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		40BCB2ED785266DF56604B69 /* Pods-ContactRealmLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactRealmLive.release.xcconfig"; path = "Target Support Files/Pods-ContactRealmLive/Pods-ContactRealmLive.release.xcconfig"; sourceTree = "<group>"; };
 		6FCB4E97D7EA656C35233255 /* Pods-ContactRealmLive-ContactRealmLiveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactRealmLive-ContactRealmLiveUITests.debug.xcconfig"; path = "Target Support Files/Pods-ContactRealmLive-ContactRealmLiveUITests/Pods-ContactRealmLive-ContactRealmLiveUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				192D78CA277AC9D600E81040 /* AppDelegate.swift */,
 				192D78CC277AC9D600E81040 /* SceneDelegate.swift */,
 				192D78CE277AC9D600E81040 /* ViewController.swift */,
+				192D78FA277B28F200E81040 /* SaveViewController.swift */,
+				192D78FC277B44D800E81040 /* ContactItem.swift */,
 				192D78D0277AC9D600E81040 /* Main.storyboard */,
 				192D78D3277AC9D800E81040 /* Assets.xcassets */,
 				192D78D5277AC9D800E81040 /* LaunchScreen.storyboard */,
@@ -406,7 +412,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192D78FD277B44D800E81040 /* ContactItem.swift in Sources */,
 				192D78CF277AC9D600E81040 /* ViewController.swift in Sources */,
+				192D78FB277B28F200E81040 /* SaveViewController.swift in Sources */,
 				192D78CB277AC9D600E81040 /* AppDelegate.swift in Sources */,
 				192D78CD277AC9D600E81040 /* SceneDelegate.swift in Sources */,
 			);
@@ -515,6 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -570,6 +579,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

@@ -8,37 +8,17 @@
 import UIKit
 import RealmSwift
 
-class ContactItem: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var telephone = ""
-    @objc dynamic var _id: ObjectId = ObjectId.generate()
-    
-    convenience init(name: String, telephone: String) {
-        self.init()
-        self.name = name
-        self.telephone = telephone
-    }
-    
-    override static func primaryKey() -> String {
-        return "_id"
-    }
-}
-
-enum Gender: String {
-    case male, female, none
-}
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
     let mike = ContactItem(name: "mike", telephone: "1232333333")
-    
     var people = try! Realm().objects(ContactItem.self).sorted(byKeyPath: "name", ascending: true)
     var realm: Realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = "Contact List"
         tableView.delegate = self
         tableView.dataSource = self
         if realm.isEmpty {
@@ -51,28 +31,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addButtonTapped(_ sender: Any) {
-        let alertController = UIAlertController(title: "Add Contact", message: "", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
-            let nameField = alertController.textFields![0] as UITextField
-            let teleField = alertController.textFields![1] as UITextField
-            let newPerson = ContactItem(name: nameField.text!, telephone: teleField.text!)
-            try! self.realm.write {
-                self.realm.add(newPerson)
-                self.tableView.reloadData()
-            }
-        })
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertController.addTextField { nameField in
-            nameField.placeholder = "New Contact Name"
+        let nextView = self.storyboard?.instantiateViewController(withIdentifier: "SaveViewController") as! SaveViewController
+        nextView.delegateFunction = {
+            self.tableView.reloadData()
         }
-        alertController.addTextField { teleField in
-            teleField.placeholder = "+1 (111) 11-1111"
-        }
-        
-        self.present(alertController, animated: true)
+        navigationController?.pushViewController(nextView, animated: false)
     }
-   
-    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -90,6 +54,4 @@ extension ViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = people[indexPath.row].telephone
         return cell
     }
-    
-    
 }
